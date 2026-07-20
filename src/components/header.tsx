@@ -1,5 +1,4 @@
 'use client'
-import Link from 'next/link'
 import { Logo } from '@/components/logo'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -33,18 +32,20 @@ export const HeroHeader = () => {
         <header>
             <nav
                 data-state={menuState && 'active'}
+                style={{ animation: 'introDown 0.6s ease-out 0.45s both' }}
                 className="fixed z-20 w-full border-b border-border bg-background/70 backdrop-blur-xl">
                 <div className="mx-auto max-w-7xl px-6 lg:px-12">
                     <motion.div
                         key={1}
                         className="relative flex flex-wrap items-center justify-between gap-6 py-3 duration-200 lg:gap-0 lg:py-4">
                         <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
-                            <Link
-                                href="/"
-                                aria-label="home"
-                                className="flex items-center space-x-2">
+                            <button
+                                type="button"
+                                onClick={() => goTo(0)}
+                                aria-label="В начало"
+                                className="flex cursor-pointer items-center space-x-2">
                                 <Logo />
-                            </Link>
+                            </button>
 
                             <button
                                 onClick={() => setMenuState(!menuState)}

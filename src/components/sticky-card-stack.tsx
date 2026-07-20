@@ -216,8 +216,18 @@ export function StickyCardStack({
               ref={(el) => {
                 cardRefs.current[i] = el;
               }}
+              // Первая карточка появляется третьей в intro-цепочке (фон → хедер
+              // → карточка). Анимируем только opacity — transform держит GSAP.
+              style={
+                i === 0
+                  ? { animation: "introFade 0.7s ease-out 0.9s both" }
+                  : undefined
+              }
               className={cn(
                 "relative w-full md:absolute md:inset-0 md:h-full md:overflow-hidden",
+                // До инициализации GSAP не-первые карточки скрыты, иначе на
+                // десктопе они на миг накладываются друг на друга (флеш).
+                i > 0 && !ready && "md:opacity-0",
                 cardClassName,
               )}
             >

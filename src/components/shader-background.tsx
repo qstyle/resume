@@ -400,6 +400,7 @@ export function ShaderBackground({ className }: { className?: string }) {
         height: "100%",
         zIndex: -10,
         display: "block",
+        animation: "introFade 0.8s ease-out both",
       }}
     />
   );
