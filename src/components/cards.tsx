@@ -103,7 +103,7 @@ export function HeroCard() {
               width={608}
               height={760}
               priority
-              className="size-full object-cover"
+              className="size-full object-cover grayscale-[0.75] brightness-95 contrast-[1.02] transition duration-500 hover:grayscale-0 hover:brightness-100"
             />
           </div>
         </div>
@@ -196,7 +196,7 @@ const JOBS = [
     period: "Март 2023 — сейчас",
     company: "Компэл",
     role: "Программист-разработчик",
-    text: "Работа на трёх проектах: легаси на классовой MVC-архитектуре (поддержка), B2B-маркетплейс, разработанный командой с нуля, и микросервисная платформа для сборки бизнес-сервисов под разные задачи. Разработал 2 микрофронтенда и участвовал ещё в 3+; отдельно веду общую дизайн-систему компании (Storybook + design-токены).",
+    text: "Работа на трёх проектах: легаси на классовой MVC-архитектуре (поддержка), B2B-маркетплейс, разработанный командой с нуля, и микросервисная платформа для сборки бизнес-сервисов под разные задачи. Разрабатывал 10+ микрофронтендов, участвую в разработке общей дизайн-системы компании (Storybook + design-токены) и в принятии архитектурных решений.",
     stack: "TypeScript · React · Webpack + Module Federation · Mantine · React Query · Storybook",
   },
   {
@@ -254,19 +254,89 @@ export function ExperienceCard() {
 const STACK_GROUPS = [
   {
     title: "Frontend",
-    items: ["TypeScript", "React", "Next.js", "Module Federation", "React Query", "Redux / Effector", "Tailwind", "Mantine / HeroUI"],
+    items: [
+      "TypeScript",
+      "JavaScript",
+      "React",
+      "Next.js",
+      "Module Federation",
+      "Webpack",
+      "Vite",
+      "React Query",
+      "Redux / Effector",
+      "React Hook Form + Zod",
+      "Tailwind",
+      "SASS / CSS Modules",
+      "Storybook",
+      "i18next / next-intl",
+      "Framer Motion / GSAP",
+    ],
   },
   {
     title: "Backend",
-    items: ["Node.js", "NestJS", "MongoDB", "Redis / BullMQ", "GraphQL", "Go"],
+    items: [
+      "Node.js",
+      "NestJS",
+      "Express / Fastify",
+      "MongoDB / Mongoose",
+      "PostgreSQL",
+      "Redis / BullMQ",
+      "GraphQL",
+      "REST API",
+      "SSE / WebSocket",
+      "JWT / Auth",
+      "Go",
+      "Микросервисы",
+      "Cron",
+    ],
   },
   {
     title: "Infra & Tooling",
-    items: ["Docker", "Docker Swarm", "CI/CD", "GitHub Actions", "Traefik", "Prometheus / Grafana"],
+    items: [
+      "Docker",
+      "Docker Swarm",
+      "Docker Compose",
+      "CI/CD",
+      "GitHub Actions",
+      "Traefik / Nginx",
+      "Ansible",
+      "Yandex Cloud",
+      "Prometheus / Grafana",
+      "Loki",
+      "Nx monorepo",
+      "Git",
+    ],
   },
   {
     title: "Testing",
-    items: ["Jest", "Testing Library", "Playwright", "Vitest", "MSW"],
+    items: [
+      "TDD",
+      "BDD (Gherkin)",
+      "jest-cucumber",
+      "Jest",
+      "Testing Library",
+      "Vitest",
+      "Playwright",
+      "MSW",
+      "Unit / Integration",
+      "E2E",
+      "Coverage",
+    ],
+  },
+  {
+    title: "AI / Нейросети",
+    items: [
+      "Cursor",
+      "Claude Code",
+      "Anthropic API",
+      "MCP-серверы",
+      "LLM / RAG",
+      "Эмбеддинги",
+      "Векторный поиск",
+      "Function calling",
+      "AI-агенты",
+      "Промпт-инжиниринг",
+    ],
   },
 ];
 
@@ -277,13 +347,13 @@ export function StackCard() {
       <h2 className="mb-8 text-3xl font-extrabold tracking-tight sm:text-4xl">
         Чем работаю
       </h2>
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid gap-x-6 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
         {STACK_GROUPS.map((g) => (
           <div key={g.title}>
             <h3 className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">
               {g.title}
             </h3>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5">
               {g.items.map((i) => (
                 <Chip key={i}>{i}</Chip>
               ))}
@@ -291,6 +361,9 @@ export function StackCard() {
           </div>
         ))}
       </div>
+      <p className="mt-6 text-sm text-muted-foreground">
+        …и ещё много всего — быстро осваиваю новое под задачу.
+      </p>
     </Card>
   );
 }
