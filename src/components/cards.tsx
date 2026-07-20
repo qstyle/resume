@@ -64,7 +64,7 @@ function Chip({ children }: { children: React.ReactNode }) {
 export function HeroCard() {
   return (
     <Card>
-      <div className="flex flex-col-reverse items-center gap-8 md:flex-row md:items-center md:gap-12">
+      <div className="flex flex-col items-center gap-8 md:flex-row md:items-center md:gap-12">
         <div className="flex-1 text-center md:text-left">
           <Eyebrow>Frontend / Fullstack-разработчик</Eyebrow>
           <h1 className="text-balance text-5xl font-extrabold leading-[0.92] tracking-tight sm:text-6xl md:text-7xl">
@@ -103,7 +103,7 @@ export function HeroCard() {
               width={608}
               height={760}
               priority
-              className="size-full object-cover grayscale-[0.75] brightness-95 contrast-[1.02] transition duration-500 hover:grayscale-0 hover:brightness-100"
+              className="size-full object-cover"
             />
           </div>
         </div>
