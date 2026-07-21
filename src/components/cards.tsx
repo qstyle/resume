@@ -328,6 +328,8 @@ const STACK_GROUPS = [
     items: [
       "Cursor",
       "Claude Code",
+      "OpenClaw",
+      "n8n",
       "Anthropic API",
       "MCP-серверы",
       "LLM / RAG",
